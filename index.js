@@ -1,5 +1,5 @@
-// List of words for the game
-const WORDS = ["javascript", "html", "css", "frontend", "backend", "programming", "scramble", "developer"];
+// List of words
+const WORDS = ["javascript", "html", "css", "frontend", "tailwind", "programming", "developer"];
 const CORRECT_MSG = "Correct!";
 const INCORRECT_MSG = "Incorrect. Try again.";
 
@@ -53,8 +53,20 @@ function checkUserGuess() {
     const isCorrect = userGuess === currentWord;
 
     resultMessage.textContent = isCorrect ? CORRECT_MSG : INCORRECT_MSG;
-    resultMessage.style.color = isCorrect ? "green" : "red";
+    resultMessage.className = isCorrect ? "slide-down-fade-in green" : "slide-down-fade-in red";
+
+    setTimeout(() => {
+        resultMessage.classList.remove("slide-down-fade-in");
+        resultMessage.classList.add("slide-up-fade-out");
+
+        setTimeout(() => {
+            resultMessage.textContent = "";
+            resultMessage.classList.remove("slide-up-fade-out");
+            clearUserInput();
+        }, 500);
+    }, 2000);
 }
 
-// Start the first game when the page loads
-window.onload = startNewGame;
+
+// Start
+startNewGame();

@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego de Scramble</title>
+    <title>Scramble Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Juego de Scramble</h1>
-        <p id="scrambledWord"></p>
-        <input type="text" id="guessInput" placeholder="Escribe tu respuesta aquí">
-        <button onclick="checkGuess()">Comprobar</button>
-        <p id="resultMessage"></p>
-        <button onclick="newGame()">Nueva Palabra</button>
+        <h1 class="game-title">Scramble Game</h1>
+        <p class="word" id="scrambledWord"></p>
+        <input type="text" class="input-box" id="guessInput" placeholder="Enter the word">
+        <button class="button" onclick="checkUserGuess()">Check</button>
+        <p class="message" id="resultMessage"></p>
+        <button class="button" onclick="startNewGame()">New Word</button>
     </div>
     <script src="index.js"></script>
 </body>
